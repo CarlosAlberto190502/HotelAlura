@@ -121,7 +121,7 @@ public class HuespedDAO {
         List<Huesped> huespeds = new ArrayList<>();
         try {
             // Preparar la sentencia SQL para obtener una reserva por su ID
-            String sql = "SELECT * FROM huespedes WHERE idReserva LIKE ? OR Apellidos = ?";
+            String sql = "SELECT * FROM huespedes WHERE idReserva LIKE ? OR Apellidos LIKE ?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, "%"+consulta+"%");
             statement.setString(2, "%"+consulta+"%");
